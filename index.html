@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sani ❤️ Tanushree</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#ff758c,#ff7eb3,#ffb347,#ff6f91);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+width:90%;
+max-width:420px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:25px;
+text-align:center;
+color:white;
+box-shadow:0 8px 30px rgba(0,0,0,0.2);
+z-index:10;
+}
+
+h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+h2{
+margin:15px 0;
+}
+
+p{
+line-height:1.7;
+font-size:16px;
+}
+
+button{
+border:none;
+padding:12px 25px;
+margin:10px;
+font-size:18px;
+border-radius:30px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.yes{
+background:white;
+color:#ff4d6d;
+font-weight:bold;
+}
+
+.yes:hover{
+transform:scale(1.08);
+}
+
+.no{
+background:#ececec;
+}
+
+.heart{
+position:absolute;
+color:white;
+font-size:20px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120px);
+opacity:0;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- Music -->
+<audio autoplay loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card" id="card">
+
+<h1>❤️ Sani & Tanushree ❤️</h1>
+
+<p>
+Dear Tanushree,<br><br>
+
+Jab se tum meri zindagi mein aayi ho,
+har din thoda aur khoobsurat lagne laga hai. ✨<br><br>
+
+Tumhari smile meri favourite cheez hai,
+aur tumhari khushi meri sabse badi wish. 💖<br><br>
+
+Main sirf itna kehna chahta hoon...
+</p>
+
+<h2>🌹 Will You Be Mine? 🌹</h2>
+
+<button class="yes" onclick="accepted()">
+Yes ❤️
+</button>
+
+<button class="no" id="noBtn">
+No 😅
+</button>
+
+</div>
+
+<script>
+
+function accepted(){
+document.body.innerHTML=`
+<div style="
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+color:white;
+font-family:sans-serif;
+text-align:center;
+padding:20px;">
+<h1 style="font-size:45px;">❤️ Thank You Tanushree ❤️</h1>
+<h2>You Made My Day 💕</h2>
+<p style="margin-top:15px;">
+I Promise To Always Respect, Support & Care For You ✨
+</p>
+</div>
+`;
+
+for(let i=0;i<100;i++){
+let heart=document.createElement("div");
+heart.innerHTML="❤️";
+heart.style.position="absolute";
+heart.style.left=Math.random()*100+"%";
+heart.style.top=Math.random()*100+"%";
+heart.style.fontSize=(20+Math.random()*30)+"px";
+document.body.appendChild(heart);
+}
+}
+
+const noBtn=document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover",()=>{
+noBtn.style.position="absolute";
+noBtn.style.left=Math.random()*80+"%";
+noBtn.style.top=Math.random()*80+"%";
+});
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"%";
+heart.style.fontSize=(15+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+}
+
+setInterval(createHeart,400);
+
+</script>
+
+</body>
+  </html>
